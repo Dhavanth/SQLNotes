@@ -164,7 +164,7 @@ Consider the following.
 | 3 | | commit, lock released |
 | 4	| Select emails with low psp again | |
 
-At timestamp 4, I might want to read the emails again because I might want to update the status of having scheduled reminder emails to them. However, I will get a different set of emails in the same transaction (timestamp 1 vs timestamp 4). This issues is called non-repeatable reads and can happen in the current isolation level. 
+At timestamp 4, I might want to read the emails again because I might want to update the status of having scheduled reminder emails to them. However, I will get a different set of emails in the same transaction (timestamp 1 vs timestamp 4). This issues is called non-repeatable reads and can happen in the current isolation level. **It is beacuse there is no lock for read operation rather only for write operation**
 
 ### Repeatable reads
 
